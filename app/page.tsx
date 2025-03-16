@@ -1,14 +1,17 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/app/components/button";
-import { HomeWithManInsideIcon } from "./components/icons/home-with-man-inside";
-import { DoubleCheckMarkIcon } from "./components/icons/double-check-mark";
-import { ContactSection } from "./components/sections/contact";
-import { ServicesSection } from "./components/sections/services";
-import { VibrationMobileIcon } from "./components/icons/vibrating-mobile";
+import BelowTheFoldImage from "@/public/below-the-fold.png";
+import ContactImage from "@/public/contact.png";
+import HeroImage from "@/public/hero-image.png";
+import Image from "next/image";
 import { useRef } from "react";
+import { DoubleCheckMarkIcon } from "./components/icons/double-check-mark";
+import { HomeWithManInsideIcon } from "./components/icons/home-with-man-inside";
+import { VibrationMobileIcon } from "./components/icons/vibrating-mobile";
+import { ContactSection } from "./components/sections/contact";
 import { ReferencesSection } from "./components/sections/references";
+import { ServicesSection } from "./components/sections/services";
 
 export default function Home() {
   const servicesRef = useRef<HTMLElement>(null);
@@ -39,7 +42,7 @@ export default function Home() {
             <div className="relative aspect-square max-md:row-start-1" aria-disabled>
               <Image
                 fill
-                src="/hero-image.png"
+                src={HeroImage}
                 alt="Csépke László és Ifj. Csépke László"
                 objectFit="contain"
                 objectPosition="center"
@@ -57,7 +60,7 @@ export default function Home() {
             >
               <Image
                 fill
-                src="/below-the-fold.png"
+                src={BelowTheFoldImage}
                 alt="Csépke Lászlóról munka közben"
                 objectFit="contain"
                 objectPosition="center"
@@ -82,7 +85,7 @@ export default function Home() {
           title="Megbízható villanyszerelőt keresel?"
           description="Írj nekünk vagy hívj minket, és szakértő csapatunk készséggel áll rendelkezésedre!"
           image={
-            <Image fill src="/contact.png" alt="Csépke László" objectFit="contain" objectPosition="center bottom" placeholder="blur" />
+            <Image fill src={ContactImage} alt="Csépke László" objectFit="contain" objectPosition="center bottom" placeholder="blur" />
           }
         />
 

@@ -1,6 +1,12 @@
+import CsaladiHazImage from "@/public/csaladi-haz.png";
+import LakossagiVillanyszerelesImage from "@/public/lakossagi-villanyszereles.png";
+import MerohelyImage from "@/public/merohely.png";
+import NapelemImage from "@/public/napelem.png";
+import RegisztraltVillanyszereloImage from "@/public/regisztralt-villanyszerelo.png";
+import VbfImage from "@/public/vbf.png";
+import Image from "next/image";
 import type { ReactNode, Ref } from "react";
 import { Button } from "../button";
-import Image from "next/image";
 
 type ServicesSectionProps = {
   ref?: Ref<HTMLElement>;
@@ -18,14 +24,7 @@ export const ServicesSection = (props: ServicesSectionProps) => {
         <ServicesSectionItem
           title="Családi házak, lakások teljes villanyszerelése"
           image={
-            <Image
-              fill
-              src="/csaladi-haz.png"
-              objectFit="cover"
-              objectPosition="center"
-              alt="Családi ház illusztráció"
-              placeholder="blur"
-            />
+            <Image fill src={CsaladiHazImage} objectFit="cover" objectPosition="center" alt="Családi ház illusztráció" placeholder="blur" />
           }
         />
         <ServicesSectionItem
@@ -33,7 +32,7 @@ export const ServicesSection = (props: ServicesSectionProps) => {
           image={
             <Image
               fill
-              src="/regisztralt-villanyszerelo.png"
+              src={RegisztraltVillanyszereloImage}
               objectFit="cover"
               objectPosition="center"
               alt="Regisztrált villanyszerelő illusztráció"
@@ -46,7 +45,7 @@ export const ServicesSection = (props: ServicesSectionProps) => {
           image={
             <Image
               fill
-              src="/napelem.png"
+              src={NapelemImage}
               objectFit="cover"
               objectPosition="center"
               alt="Napelem telepítése illusztráció"
@@ -59,7 +58,7 @@ export const ServicesSection = (props: ServicesSectionProps) => {
           image={
             <Image
               fill
-              src="/merohely.png"
+              src={MerohelyImage}
               objectFit="cover"
               objectPosition="center"
               alt="Mérőhely szabványosítás illusztráció"
@@ -70,7 +69,7 @@ export const ServicesSection = (props: ServicesSectionProps) => {
         <ServicesSectionItem
           title="VBF felülviszgálat"
           image={
-            <Image fill src="/vbf.png" objectFit="cover" objectPosition="center" alt="VBF felülviszgálat illusztráció" placeholder="blur" />
+            <Image fill src={VbfImage} objectFit="cover" objectPosition="center" alt="VBF felülviszgálat illusztráció" placeholder="blur" />
           }
         />
         <ServicesSectionItem
@@ -78,7 +77,7 @@ export const ServicesSection = (props: ServicesSectionProps) => {
           image={
             <Image
               fill
-              src="/lakossagi-villanyszereles.png"
+              src={LakossagiVillanyszerelesImage}
               objectFit="cover"
               objectPosition="center"
               alt="Lakossági Villanyszerelés A-Z illusztráció"

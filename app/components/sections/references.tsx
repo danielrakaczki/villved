@@ -1,3 +1,7 @@
+import AutoToltoImage from "@/public/auto-tolto.png";
+import KabelezesImage from "@/public/kabelezes.png";
+import KapcsolotablaImage from "@/public/kapcsolotabla.png";
+import MeroraImage from "@/public/merorak.png";
 import Image from "next/image";
 
 export const ReferencesSection = () => {
@@ -7,7 +11,7 @@ export const ReferencesSection = () => {
         <div className="relative" aria-disabled>
           <Image
             fill
-            src="/merorak.png"
+            src={MeroraImage}
             alt="Méröóra állások"
             objectFit="cover"
             objectPosition="center"
@@ -18,7 +22,7 @@ export const ReferencesSection = () => {
         <div className="relative" aria-disabled>
           <Image
             fill
-            src="/kabelezes.png"
+            src={KabelezesImage}
             alt="Kábelezés"
             objectFit="cover"
             objectPosition="center"
@@ -29,7 +33,7 @@ export const ReferencesSection = () => {
         <div className="relative" aria-disabled>
           <Image
             fill
-            src="/kapcsolotabla.png"
+            src={KapcsolotablaImage}
             alt="Kapcsolótábla"
             objectFit="cover"
             objectPosition="center"
@@ -40,7 +44,7 @@ export const ReferencesSection = () => {
         <div className="relative" aria-disabled>
           <Image
             fill
-            src="/auto-tolto.png"
+            src={AutoToltoImage}
             alt="Autó töltö állomás"
             objectFit="cover"
             objectPosition="center"

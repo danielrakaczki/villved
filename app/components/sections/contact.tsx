@@ -1,6 +1,6 @@
+import { cn } from "@/app/utils";
 import type { ReactNode } from "react";
 import { Button } from "../button";
-import { cn } from "@/app/utils";
 
 type ContactSectionProps = {
   title: string;
