@@ -13,8 +13,8 @@ type ServicesSectionItemProps = {
 
 export const ServicesSection = (props: ServicesSectionProps) => {
   return (
-    <section className="mx-auto mt-16 flex w-full scroll-mt-16 lg:max-w-screen-2xl" {...props}>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <section className="mt-16 w-full scroll-mt-16" {...props}>
+      <div className="mx-auto grid grid-cols-1 gap-8 p-8 md:grid-cols-2 lg:max-w-screen-2xl lg:grid-cols-3">
         <ServicesSectionItem
           title="Családi házak, lakások teljes villanyszerelése"
           image={<Image fill src="/csaladi-haz.png" objectFit="cover" objectPosition="center" alt="Családi ház illusztráció" />}
@@ -63,8 +63,8 @@ export const ServicesSection = (props: ServicesSectionProps) => {
 const ServicesSectionItem = ({ image, title }: ServicesSectionItemProps) => {
   return (
     <div className="relative flex flex-col overflow-hidden rounded-[1em] text-2xl">
-      <div className="relative aspect-video shrink-0 basis-[fit-content]">{image}</div>
-      <div className="flex flex-1 flex-col items-center gap-4 bg-black/20 p-8 backdrop-blur-3xl">
+      <div className="relative z-0 aspect-video shrink-0 basis-[fit-content]">{image}</div>
+      <div className="z-10 flex flex-1 flex-col items-center gap-4 bg-black/20 p-8 backdrop-blur-3xl">
         <h3 className="text-center font-semibold text-white">{title}</h3>
         <Button color="white" className="mt-auto w-fit">
           Hívjon most

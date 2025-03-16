@@ -50,4 +50,31 @@ body {
     @apply bg-tertiary font-bold text-white;
     --dark-shadow-color: hsl(0deg, 0%, 45%);
   }
+
+  .references-grid-area {
+    @apply grid gap-4 max-lg:grid-cols-2 max-md:grid-cols-1;
+
+    @media (width >= 64rem /* 1024px */) {
+      height: clamp(600px, 80vh, 1000px);
+      grid-template-areas:
+        "first first second second"
+        "first first third fourth";
+    }
+  }
+
+  .references-grid-area > *:nth-child(1) {
+    @apply max-lg:aspect-square lg:[grid-area:first];
+  }
+
+  .references-grid-area > *:nth-child(2) {
+    @apply max-lg:aspect-square lg:[grid-area:second];
+  }
+
+  .references-grid-area > *:nth-child(3) {
+    @apply max-lg:aspect-square lg:[grid-area:third];
+  }
+
+  .references-grid-area > *:nth-child(4) {
+    @apply max-lg:aspect-square lg:[grid-area:fourth];
+  }
 }
