@@ -3,6 +3,7 @@ import { Button } from "@/app/components/button";
 import { HomeWithManInsideIcon } from "./components/icons/home-with-man-inside";
 import { DoubleCheckMarkIcon } from "./components/icons/double-check-mark";
 import { ContactSection } from "./components/sections/contact";
+import { ServicesSection } from "./components/sections/services";
 
 export default function Home() {
   return (
@@ -54,6 +55,8 @@ export default function Home() {
           description="Írj nekünk vagy hívj minket, és szakértő csapatunk készséggel áll rendelkezésedre!"
           image={<Image fill src="/contact.png" alt="Csépke László" objectFit="contain" objectPosition="center bottom" />}
         />
+
+        <ServicesSection />
       </main>
       <footer className="mt-auto flex flex-wrap items-center justify-center gap-6 py-16">
         &copy; {new Date().getFullYear()} All rights reserved.
