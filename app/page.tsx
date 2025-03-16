@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "@/app/components/button";
 import { HomeWithManInsideIcon } from "./components/icons/home-with-man-inside";
 import { DoubleCheckMarkIcon } from "./components/icons/double-check-mark";
+import { ContactSection } from "./components/sections/contact";
 
 export default function Home() {
   return (
@@ -22,14 +23,7 @@ export default function Home() {
             </div>
           </div>
           <div className="relative aspect-square max-md:row-start-1" aria-disabled>
-            <Image
-              fill
-              src="/hero-image.png"
-              alt="Csépke László és Ifj. Csépke László"
-              objectFit="contain"
-              objectPosition="center"
-              priority
-            />
+            <Image fill src="/hero-image.png" alt="Csépke László és Ifj. Csépke László" objectFit="contain" objectPosition="center" />
           </div>
         </section>
 
@@ -44,16 +38,22 @@ export default function Home() {
             <Image fill src="/below-the-fold.png" alt="Csépke Lászlóról munka közben" objectFit="contain" objectPosition="center" />
           </div>
           <ul className="flex items-center justify-center gap-8 text-xl max-md:flex-wrap md:w-fit md:flex-row md:justify-end md:justify-self-end lg:text-2xl">
-            <li className="bg-primary flex items-center justify-center gap-4 rounded-[1em] p-4 text-white md:flex-col lg:p-8">
+            <li className="from-primary to-primary-2 flex items-center gap-4 rounded-[1em] bg-gradient-to-br p-4 text-white max-md:w-full md:flex-col md:justify-center lg:p-8">
               <HomeWithManInsideIcon className="h-[4em] w-[4em] lg:h-[5em] lg:w-[5em]" aria-disabled />
-              <p className="max-w-[20ch] text-center font-bold">Csak lakossági ügyfelek számára</p>
+              <p className="max-w-[20ch] font-bold md:text-center">Csak lakossági ügyfelek számára</p>
             </li>
-            <li className="bg-primary flex items-center justify-center gap-4 rounded-[1em] p-4 text-white md:flex-col lg:p-8">
+            <li className="from-primary to-primary-2 flex items-center gap-4 rounded-[1em] bg-gradient-to-br p-4 text-white max-md:w-full md:flex-col md:justify-center lg:p-8">
               <DoubleCheckMarkIcon className="h-[4em] w-[4em] lg:h-[5em] lg:w-[5em]" aria-disabled />
-              <p className="max-w-[20ch] text-center font-bold">Több mint 20 féle szolgáltatás</p>
+              <p className="max-w-[20ch] font-bold md:text-center">Több mint 20 féle szolgáltatás</p>
             </li>
           </ul>
         </section>
+
+        <ContactSection
+          title="Megbízható villanyszerelőt keresel?"
+          description="Írj nekünk vagy hívj minket, és szakértő csapatunk készséggel áll rendelkezésedre!"
+          image={<Image fill src="/contact.png" alt="Csépke László" objectFit="contain" objectPosition="center bottom" />}
+        />
       </main>
       <footer className="mt-auto flex flex-wrap items-center justify-center gap-6 py-16">
         &copy; {new Date().getFullYear()} All rights reserved.

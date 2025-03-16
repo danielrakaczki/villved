@@ -41,6 +41,11 @@ body {
     --dark-shadow-color: hsl(350deg, 99%, 30%);
   }
 
+  .btn.white {
+    @apply text-primary bg-white font-bold;
+    --dark-shadow-color: hsl(0deg, 0%, 50%);
+  }
+
   .btn.tertiary {
     @apply bg-tertiary font-bold text-white;
     --dark-shadow-color: hsl(0deg, 0%, 45%);
