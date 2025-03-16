@@ -1,15 +1,19 @@
-import type { ReactNode } from "react";
+import type { ReactNode, Ref } from "react";
 import { Button } from "../button";
 import Image from "next/image";
+
+type ServicesSectionProps = {
+  ref?: Ref<HTMLElement>;
+};
 
 type ServicesSectionItemProps = {
   image: ReactNode;
   title: string;
 };
 
-export const ServicesSection = () => {
+export const ServicesSection = (props: ServicesSectionProps) => {
   return (
-    <section className="mx-auto mt-16 flex w-full lg:max-w-screen-2xl">
+    <section className="mx-auto mt-16 flex w-full scroll-mt-16 lg:max-w-screen-2xl" {...props}>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         <ServicesSectionItem
           title="Családi házak, lakások teljes villanyszerelése"

@@ -1,11 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/app/components/button";
 import { HomeWithManInsideIcon } from "./components/icons/home-with-man-inside";
 import { DoubleCheckMarkIcon } from "./components/icons/double-check-mark";
 import { ContactSection } from "./components/sections/contact";
 import { ServicesSection } from "./components/sections/services";
+import { VibrationMobileIcon } from "./components/icons/vibrating-mobile";
+import { useRef } from "react";
 
 export default function Home() {
+  const servicesRef = useRef<HTMLElement>(null);
+
+  const onGoToServices = () => {
+    servicesRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div className="flex min-h-screen flex-col">
       <main className="mx-auto flex flex-col items-center gap-8 p-8 sm:items-start">
@@ -20,7 +29,9 @@ export default function Home() {
             </p>
             <div className="mt-4 flex flex-wrap items-stretch justify-start gap-4 text-lg md:text-xl lg:text-2xl">
               <Button color="primary">Hívjon most</Button>
-              <Button color="tertiary">Szolgáltatások</Button>
+              <Button color="tertiary" onClick={onGoToServices}>
+                Szolgáltatások
+              </Button>
             </div>
           </div>
           <div className="relative aspect-square max-md:row-start-1" aria-disabled>
@@ -56,7 +67,15 @@ export default function Home() {
           image={<Image fill src="/contact.png" alt="Csépke László" objectFit="contain" objectPosition="center bottom" />}
         />
 
-        <ServicesSection />
+        <ServicesSection ref={servicesRef} />
+
+        <ContactSection
+          title="Kérdésed van? Segítünk!"
+          description="Vedd fel velünk a kapcsolatot telefonon vagy emailben, és rövid időn belül válaszolunk!"
+          image={<VibrationMobileIcon className="h-full w-full text-white" />}
+          align="right"
+          className="mt-32!"
+        />
       </main>
       <footer className="mt-auto flex flex-wrap items-center justify-center gap-6 py-16">
         &copy; {new Date().getFullYear()}Minden jog fenntartva.
