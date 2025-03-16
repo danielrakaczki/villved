@@ -59,7 +59,7 @@ export default function Home() {
         <ServicesSection />
       </main>
       <footer className="mt-auto flex flex-wrap items-center justify-center gap-6 py-16">
-        &copy; {new Date().getFullYear()} All rights reserved.
+        &copy; {new Date().getFullYear()}Minden jog fenntartva.
       </footer>
     </div>
   );
