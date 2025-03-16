@@ -37,7 +37,14 @@ export default function Home() {
               </div>
             </div>
             <div className="relative aspect-square max-md:row-start-1" aria-disabled>
-              <Image fill src="/hero-image.png" alt="Csépke László és Ifj. Csépke László" objectFit="contain" objectPosition="center" />
+              <Image
+                fill
+                src="/hero-image.png"
+                alt="Csépke László és Ifj. Csépke László"
+                objectFit="contain"
+                objectPosition="center"
+                placeholder="blur"
+              />
             </div>
           </div>
         </section>
@@ -48,7 +55,14 @@ export default function Home() {
               className="after:bg-tertiary relative mr-8 aspect-square overflow-visible after:absolute after:inset-0 after:-z-10 after:translate-x-8 after:translate-y-8 after:content-['']"
               aria-disabled
             >
-              <Image fill src="/below-the-fold.png" alt="Csépke Lászlóról munka közben" objectFit="contain" objectPosition="center" />
+              <Image
+                fill
+                src="/below-the-fold.png"
+                alt="Csépke Lászlóról munka közben"
+                objectFit="contain"
+                objectPosition="center"
+                placeholder="blur"
+              />
             </div>
             <ul className="flex items-center justify-center gap-8 text-xl max-md:flex-wrap md:w-fit md:flex-row md:justify-end md:justify-self-end lg:text-2xl">
               <li className="from-primary to-primary-2 flex items-center gap-4 rounded-[1em] bg-gradient-to-br p-4 text-white max-md:w-full md:flex-col md:justify-center lg:p-8">
@@ -67,7 +81,9 @@ export default function Home() {
           id="contact"
           title="Megbízható villanyszerelőt keresel?"
           description="Írj nekünk vagy hívj minket, és szakértő csapatunk készséggel áll rendelkezésedre!"
-          image={<Image fill src="/contact.png" alt="Csépke László" objectFit="contain" objectPosition="center bottom" />}
+          image={
+            <Image fill src="/contact.png" alt="Csépke László" objectFit="contain" objectPosition="center bottom" placeholder="blur" />
+          }
         />
 
         <ServicesSection ref={servicesRef} />

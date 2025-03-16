@@ -17,7 +17,16 @@ export const ServicesSection = (props: ServicesSectionProps) => {
       <div className="mx-auto grid grid-cols-1 gap-8 p-8 md:grid-cols-2 lg:max-w-screen-2xl lg:grid-cols-3">
         <ServicesSectionItem
           title="Családi házak, lakások teljes villanyszerelése"
-          image={<Image fill src="/csaladi-haz.png" objectFit="cover" objectPosition="center" alt="Családi ház illusztráció" />}
+          image={
+            <Image
+              fill
+              src="/csaladi-haz.png"
+              objectFit="cover"
+              objectPosition="center"
+              alt="Családi ház illusztráció"
+              placeholder="blur"
+            />
+          }
         />
         <ServicesSectionItem
           title="Regisztrált villanyszerelő"
@@ -28,20 +37,41 @@ export const ServicesSection = (props: ServicesSectionProps) => {
               objectFit="cover"
               objectPosition="center"
               alt="Regisztrált villanyszerelő illusztráció"
+              placeholder="blur"
             />
           }
         />
         <ServicesSectionItem
           title="Napelem telepítése"
-          image={<Image fill src="/napelem.png" objectFit="cover" objectPosition="center" alt="Napelem telepítése illusztráció" />}
+          image={
+            <Image
+              fill
+              src="/napelem.png"
+              objectFit="cover"
+              objectPosition="center"
+              alt="Napelem telepítése illusztráció"
+              placeholder="blur"
+            />
+          }
         />
         <ServicesSectionItem
           title="Mérőhely szabványosítás"
-          image={<Image fill src="/merohely.png" objectFit="cover" objectPosition="center" alt="Mérőhely szabványosítás illusztráció" />}
+          image={
+            <Image
+              fill
+              src="/merohely.png"
+              objectFit="cover"
+              objectPosition="center"
+              alt="Mérőhely szabványosítás illusztráció"
+              placeholder="blur"
+            />
+          }
         />
         <ServicesSectionItem
           title="VBF felülviszgálat"
-          image={<Image fill src="/vbf.png" objectFit="cover" objectPosition="center" alt="VBF felülviszgálat illusztráció" />}
+          image={
+            <Image fill src="/vbf.png" objectFit="cover" objectPosition="center" alt="VBF felülviszgálat illusztráció" placeholder="blur" />
+          }
         />
         <ServicesSectionItem
           title="Lakossági Villanyszerelés A-Z"
@@ -52,6 +82,7 @@ export const ServicesSection = (props: ServicesSectionProps) => {
               objectFit="cover"
               objectPosition="center"
               alt="Lakossági Villanyszerelés A-Z illusztráció"
+              placeholder="blur"
             />
           }
         />
