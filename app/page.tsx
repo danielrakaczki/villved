@@ -14,6 +14,7 @@ import { ReferencesSection } from "./components/sections/references";
 import { ServicesSection } from "./components/sections/services";
 import { AboutUsSection } from "./components/sections/about-us";
 import { ReviewsSection } from "./components/sections/reviews";
+import { FaqSection } from "./components/sections/faq";
 
 export default function Home() {
   const servicesRef = useRef<HTMLElement>(null);
@@ -25,7 +26,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       <main className="mx-auto flex flex-col items-center gap-8 sm:items-start">
         <section id="hero" className="w-full">
-          <div className="mx-auto grid w-full gap-4 p-8 md:grid-cols-2 md:place-items-stretch lg:max-w-screen-2xl lg:gap-8">
+          <div className="mx-auto grid w-full gap-4 p-8 md:grid-cols-2 md:place-items-stretch lg:max-w-screen-2xl">
             <div className="flex flex-col justify-center gap-8 text-balance">
               <h1 className="text-3xl leading-tight font-bold lg:text-[clamp(3rem,3.33vw,4rem)]">
                 <span className="text-primary">Biztonságos</span> és <span className="text-primary">profi</span> villanyszerelés lakossági
@@ -48,7 +49,7 @@ export default function Home() {
                 alt="Csépke László és Ifj. Csépke László"
                 objectFit="contain"
                 objectPosition="center"
-                placeholder="blur"
+                placeholder="empty"
               />
             </div>
           </div>
@@ -110,12 +111,15 @@ export default function Home() {
 
         <ContactSection
           id="contact-3"
+          className="mt-20!"
           title="Szakértői segítség egy hívásnyira!"
           description="Kérdésed van a szolgáltatásainkkal kapcsolatban? Vedd fel velünk a kapcsolatot, és villámgyorsan válaszolunk!"
           image={
             <Image fill src={ContactImage} alt="Csépke László" objectFit="contain" objectPosition="center bottom" placeholder="blur" />
           }
         />
+
+        <FaqSection />
       </main>
       <footer className="mt-auto flex flex-wrap items-center justify-center gap-6 py-16">
         &copy; {new Date().getFullYear()} Minden jog fenntartva.
