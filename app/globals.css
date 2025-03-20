@@ -59,6 +59,19 @@ body {
   color: var(--foreground);
 }
 
+#reviews .stars .star {
+  @apply text-primary h-8 w-8;
+
+  &:nth-child(2),
+  &:nth-child(4) {
+    @apply h-10 w-10;
+  }
+
+  &:nth-child(3) {
+    @apply h-12 w-12;
+  }
+}
+
 @layer components {
   .text-gradient {
     --tw-gradient-position: to left in oklab;
