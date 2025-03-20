@@ -15,7 +15,10 @@ type ReviewProps = {
 
 export const ReviewsSection = () => {
   return (
-    <Section id="reviews">
+    <Section id="reviews" className="relative overflow-hidden">
+      {/* <h2 className="text-tertiary/5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-[clamp(5rem,10vw,30rem)] font-bold whitespace-nowrap uppercase select-none max-md:hidden">
+        A Ti véleményetek
+      </h2> */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
         <Review
           name="Dániel"
@@ -51,8 +54,8 @@ const Review = ({ image, name, service, review, stars }: ReviewProps) => {
         objectFit="cover"
       />
       <p className="text-2xl leading-tight font-bold">{name}</p>
-      <p className="my-em-4 text-tertiary leading-tight font-semibold">{service}</p>
-      <p className="mb-em-4 max-w-[350px] flex-1 text-xl leading-tight font-semibold text-balance">{review}</p>
+      <p className="my-em-4 text-tertiary leading-tight font-medium">{service}</p>
+      <p className="mb-em-4 max-w-[350px] flex-1 text-xl leading-tight font-semibold text-balance italic">&quot;{review}&quot;</p>
       <div className="stars flex items-center justify-center gap-4">
         {Array.from({ length: stars }).map((_, i) => (
           <StartIcon key={i} className="star" />

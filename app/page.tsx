@@ -24,7 +24,7 @@ export default function Home() {
   };
   return (
     <div className="flex min-h-screen flex-col">
-      <main className="mx-auto flex flex-col items-center gap-8 sm:items-start">
+      <main className="flex flex-col items-center gap-8 sm:items-start">
         <section id="hero" className="w-full">
           <div className="mx-auto grid w-full gap-4 p-8 md:grid-cols-2 md:place-items-stretch lg:max-w-screen-2xl">
             <div className="flex flex-col justify-center gap-8 text-balance">
@@ -56,7 +56,7 @@ export default function Home() {
         </section>
 
         <section id="below the fold" className="w-full">
-          <div className="grid w-full grid-cols-1 place-items-stretch gap-16 p-8 max-md:pt-8 md:w-full md:grid-cols-[1fr_2fr] md:flex-row md:items-center lg:max-w-screen-2xl">
+          <div className="mx-auto grid w-full grid-cols-1 place-items-stretch gap-16 p-8 max-md:pt-8 md:w-full md:grid-cols-[1fr_2fr] md:flex-row md:items-center lg:max-w-screen-2xl">
             <div
               className="after:bg-tertiary relative mr-8 aspect-square overflow-visible after:absolute after:inset-0 after:-z-10 after:translate-x-8 after:translate-y-8 after:content-['']"
               aria-disabled
