@@ -12,6 +12,7 @@ import { VibrationMobileIcon } from "./components/icons/vibrating-mobile";
 import { ContactSection } from "./components/sections/contact";
 import { ReferencesSection } from "./components/sections/references";
 import { ServicesSection } from "./components/sections/services";
+import { AboutUsSection } from "./components/sections/about-us";
 
 export default function Home() {
   const servicesRef = useRef<HTMLElement>(null);
@@ -101,6 +102,8 @@ export default function Home() {
         />
 
         <ReferencesSection />
+
+        <AboutUsSection />
       </main>
       <footer className="mt-auto flex flex-wrap items-center justify-center gap-6 py-16">
         &copy; {new Date().getFullYear()}Minden jog fenntartva.

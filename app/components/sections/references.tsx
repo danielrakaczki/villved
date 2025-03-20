@@ -3,11 +3,14 @@ import KabelezesImage from "@/public/kabelezes.png";
 import KapcsolotablaImage from "@/public/kapcsolotabla.png";
 import MeroraImage from "@/public/merorak.png";
 import Image from "next/image";
+import { SectionHeader } from "../section-header";
+import { Section } from "../section";
 
 export const ReferencesSection = () => {
   return (
-    <section id="referencies" className="grid w-full">
-      <div className="references-grid-area mx-auto grid w-full place-items-stretch gap-8 p-8 lg:max-w-screen-2xl">
+    <Section id="references">
+      <SectionHeader>Referencia munkáink</SectionHeader>
+      <div className="references-grid-area grid place-items-stretch gap-8">
         <div className="relative" aria-disabled>
           <Image
             fill
@@ -53,6 +56,6 @@ export const ReferencesSection = () => {
           />
         </div>
       </div>
-    </section>
+    </Section>
   );
 };

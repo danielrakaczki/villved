@@ -7,6 +7,8 @@ import VbfImage from "@/public/vbf.png";
 import Image from "next/image";
 import type { ReactNode, Ref } from "react";
 import { Button } from "../button";
+import { SectionHeader } from "../section-header";
+import { Section } from "../section";
 
 type ServicesSectionProps = {
   ref?: Ref<HTMLElement>;
@@ -19,8 +21,9 @@ type ServicesSectionItemProps = {
 
 export const ServicesSection = (props: ServicesSectionProps) => {
   return (
-    <section className="mt-16 w-full scroll-mt-16" {...props}>
-      <div className="mx-auto grid grid-cols-1 gap-8 p-8 md:grid-cols-2 lg:max-w-screen-2xl lg:grid-cols-3">
+    <Section id="services" className="mt-16 scroll-mt-16" {...props}>
+      <SectionHeader>Szolgáltatásaink</SectionHeader>
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         <ServicesSectionItem
           title="Családi házak, lakások teljes villanyszerelése"
           image={
@@ -86,7 +89,7 @@ export const ServicesSection = (props: ServicesSectionProps) => {
           }
         />
       </div>
-    </section>
+    </Section>
   );
 };
 
