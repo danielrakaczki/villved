@@ -107,9 +107,18 @@ export default function Home() {
         <AboutUsSection />
 
         <ReviewsSection />
+
+        <ContactSection
+          id="contact-3"
+          title="Szakértői segítség egy hívásnyira!"
+          description="Kérdésed van a szolgáltatásainkkal kapcsolatban? Vedd fel velünk a kapcsolatot, és villámgyorsan válaszolunk!"
+          image={
+            <Image fill src={ContactImage} alt="Csépke László" objectFit="contain" objectPosition="center bottom" placeholder="blur" />
+          }
+        />
       </main>
       <footer className="mt-auto flex flex-wrap items-center justify-center gap-6 py-16">
-        &copy; {new Date().getFullYear()}Minden jog fenntartva.
+        &copy; {new Date().getFullYear()} Minden jog fenntartva.
       </footer>
     </div>
   );
