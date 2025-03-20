@@ -89,19 +89,16 @@ details summary::-webkit-details-marker {
   }
 
   .btn {
-    @apply relative transform-gpu cursor-pointer overflow-hidden rounded-[0.75em] px-[0.75em] py-[0.5em] transition-all ease-in-out;
-    box-shadow:
-      0 0.16em 0.4em 0 rgba(255, 255, 255, 0.25) inset,
-      0 0.16em 0 0 var(--dark-shadow-color);
+    @apply relative -translate-y-[0.16em] scale-100 transform-gpu cursor-pointer overflow-hidden rounded-[0.75em] border-t-0 border-b-[0.16em] border-y-[var(--dark-shadow-color)] px-[0.75em] py-[0.5em] transition-all duration-75 ease-in-out active:scale-95;
   }
+
+  /* Button hover style */
   .btn:where(:active, :focus-visible, :hover),
   .group .btn-hover:where(:active, :focus-visible, :hover) .btn,
   .group[open] .btn {
-    @apply translate-y-[0.16em] after:pointer-events-auto after:absolute after:inset-0 after:z-1 after:bg-gradient-to-b after:from-black/0 after:to-black/10 after:content-[''];
-    box-shadow:
-      0 0.16em 0 0 rgba(0, 0, 0, 0.25) inset,
-      0 0 0 0 var(--dark-shadow-color);
+    @apply border-t-[0.16em] border-b-0 after:pointer-events-auto after:absolute after:inset-0 after:z-1 after:bg-gradient-to-b after:from-black/0 after:to-black/10 after:content-[''];
   }
+
   .btn.primary {
     @apply bg-primary font-bold text-white;
     --dark-shadow-color: hsl(350deg, 99%, 30%);
