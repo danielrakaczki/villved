@@ -1,16 +1,32 @@
 import { FAQS } from "@/app/data/faqs";
+import type { FAQPage, WithContext } from "schema-dts";
+import { SolidChevronDownIcon } from "../icons/solid-chevron-down";
+import { JsonLDScript } from "../json-ld-script";
 import { Section } from "../section";
 import { SectionHeader } from "../section-header";
-import { SolidChevronDownIcon } from "../icons/solid-chevron-down";
 
 type FaqProps = {
   question: string;
   answer: string;
 };
 
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map(({ question, answer }) => ({
+    "@type": "Question",
+    name: question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: answer,
+    },
+  })),
+};
+
 export const FaqSection = () => {
   return (
     <Section id="faq">
+      <JsonLDScript jsonLD={jsonLd} />
       <SectionHeader>Gyakori kérdések</SectionHeader>
       <div className="relative flex flex-col gap-2">
         <div className="bg-tertiary/10 absolute inset-y-0 left-0 w-2 rounded-l-2xl content-['']" aria-disabled></div>
@@ -37,28 +53,3 @@ const Faq = ({ question, answer }: FaqProps) => {
     </details>
   );
 };
-
-// import { Product, WithContext } from 'schema-dts'
-
-// const jsonLd: WithContext<Product> = {
-//   '@context': 'https://schema.org',
-//   '@type': 'Product',
-//   name: 'Next.js Sticker',
-//   image: 'https://nextjs.org/imgs/sticker.png',
-//   description: 'Dynamic at the speed of static.',
-// }
-// Context to use:
-// {
-//   "@context": "https://schema.org",
-//   "@type": "FAQPage",
-//   "mainEntity": [
-//     {
-//       "@type": "Question",
-//       "name": "What is the best way to structure an FAQ?",
-//       "acceptedAnswer": {
-//         "@type": "Answer",
-//         "text": "Use semantic HTML, structured data, and clear headings."
-//       }
-//     }
-//   ]
-// }
