@@ -10,7 +10,7 @@ type FaqProps = {
   answer: string;
 };
 
-const jsonLd: WithContext<FAQPage> = {
+const FAQ_JSON_LD: WithContext<FAQPage> = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: FAQS.map(({ question, answer }) => ({
@@ -26,7 +26,7 @@ const jsonLd: WithContext<FAQPage> = {
 export const FaqSection = () => {
   return (
     <Section id="faq">
-      <JsonLDScript jsonLD={jsonLd} />
+      <JsonLDScript jsonLD={FAQ_JSON_LD} />
       <SectionHeader>Gyakori kérdések</SectionHeader>
       <div className="relative flex flex-col gap-2">
         <div className="bg-tertiary/10 absolute inset-y-0 left-0 w-2 rounded-l-2xl content-['']" aria-disabled></div>
