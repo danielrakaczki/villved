@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "./components/navbar";
+import { cn } from "./utils";
 
 const workSans = Work_Sans({
   variable: "--font-work-sans",
@@ -19,7 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hu">
-      <body className={`${workSans.variable} antialiased`}>{children}</body>
+      <body className={cn(workSans.variable, "antialiased")}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

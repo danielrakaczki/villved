@@ -52,7 +52,9 @@
   --color-primary-2: var(--primary-2);
   --color-tertiary: var(--tertiary);
 }
-
+* {
+  @apply scroll-mt-em-10 scroll-smooth;
+}
 body {
   @apply font-sans;
   background: var(--background);
@@ -65,6 +67,10 @@ details summary::marker,
 details summary::-webkit-details-marker {
   @apply hidden;
 }
+
+/* section[id] {
+  @apply scroll-mt-em-4 scroll-smooth;
+} */
 
 #reviews .stars .star {
   @apply text-primary h-8 w-8;
