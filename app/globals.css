@@ -111,7 +111,7 @@ details summary::-webkit-details-marker {
 
   .btn.tertiary {
     @apply bg-tertiary font-bold text-white;
-    --dark-shadow-color: hsl(0deg, 0%, 45%);
+    --dark-shadow-color: hsl(0deg, 0%, 20%);
   }
 
   .references-grid-area {
