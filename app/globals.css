@@ -52,14 +52,17 @@
   --color-primary-2: var(--primary-2);
   --color-tertiary: var(--tertiary);
 }
+
 * {
   @apply scroll-mt-em-10 scroll-smooth;
 }
+
 body {
   @apply font-sans;
   background: var(--background);
   color: var(--foreground);
 }
+
 details summary {
   @apply list-none;
 }
@@ -67,10 +70,6 @@ details summary::marker,
 details summary::-webkit-details-marker {
   @apply hidden;
 }
-
-/* section[id] {
-  @apply scroll-mt-em-4 scroll-smooth;
-} */
 
 #reviews .stars .star {
   @apply text-primary h-8 w-8;
@@ -82,6 +81,55 @@ details summary::-webkit-details-marker {
 
   &:nth-child(3) {
     @apply h-12 w-12;
+  }
+}
+
+@theme {
+  --animate-appear: 0.5s ease-in-out 0s 1 forwards appear;
+  --animate-disappear: 0.5s ease-in-out 0s 1 forwards disappear;
+  --animate-scale-in: 0.5s ease-in-out 0s 1 forwards scale-in;
+  --animate-scale-out: 0.5s ease-in-out 0s 1 forwards scale-out;
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes disappear {
+    0% {
+      opacity: 1;
+      scale: 1;
+    }
+    100% {
+      opacity: 0;
+      scale: 0.9;
+    }
+  }
+
+  @keyframes scale-in {
+    0% {
+      opacity: 0;
+      scale: 0.9;
+    }
+    100% {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  @keyframes scale-out {
+    0% {
+      opacity: 1;
+      scale: 1;
+    }
+    100% {
+      opacity: 0;
+      scale: 0.9;
+    }
   }
 }
 
