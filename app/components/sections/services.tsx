@@ -7,8 +7,10 @@ import VbfImage from "@/public/vbf.png";
 import Image from "next/image";
 import type { ReactNode, Ref } from "react";
 import { Button } from "../button";
-import { SectionHeader } from "../section-header";
+import { WHILE_IN_VIEW_VARIANTS } from "../motion/animations";
+import { Motion } from "../motion/motion";
 import { Section } from "../section";
+import { SectionHeader } from "../section-header";
 
 type ServicesSectionProps = {
   ref?: Ref<HTMLElement>;
@@ -23,7 +25,7 @@ export const ServicesSection = (props: ServicesSectionProps) => {
   return (
     <Section id="services" className="mt-16 scroll-mt-16" {...props}>
       <SectionHeader>Szolgáltatásaink</SectionHeader>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         <ServicesSectionItem
           title="Családi házak, lakások teljes villanyszerelése"
           image={
@@ -88,24 +90,31 @@ export const ServicesSection = (props: ServicesSectionProps) => {
             />
           }
         />
-      </div>
+      </Motion.div>
     </Section>
   );
 };
 
 const ServicesSectionItem = ({ image, title }: ServicesSectionItemProps) => {
   return (
-    <div className="relative flex flex-col overflow-hidden rounded-[1em] text-2xl">
-      <div className="relative z-0 aspect-video shrink-0 basis-[fit-content]">{image}</div>
-      <div className="z-10 flex flex-1 flex-col items-center gap-4 bg-black/20 p-8 backdrop-blur-3xl">
-        <h3 className="text-center font-semibold text-white">{title}</h3>
-        <Button color="white" className="mt-auto w-fit">
-          Hívjon most
-        </Button>
-      </div>
-      <div aria-disabled className="absolute inset-0 -z-10 content-['']">
+    <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="relative flex flex-col overflow-hidden rounded-[1em] text-2xl">
+      <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="relative z-0 aspect-video shrink-0 basis-[fit-content]">
         {image}
-      </div>
-    </div>
+      </Motion.div>
+      <Motion.div
+        variants={WHILE_IN_VIEW_VARIANTS}
+        className="z-10 flex flex-1 flex-col items-center gap-4 bg-black/20 p-8 backdrop-blur-3xl"
+      >
+        <Motion.h3 variants={WHILE_IN_VIEW_VARIANTS} className="text-center font-semibold text-white">
+          {title}
+        </Motion.h3>
+        <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="mt-auto w-fit">
+          <Button color="white">Hívjon most</Button>
+        </Motion.div>
+      </Motion.div>
+      <Motion.div variants={WHILE_IN_VIEW_VARIANTS} aria-disabled className="absolute inset-0 -z-10 content-['']">
+        {image}
+      </Motion.div>
+    </Motion.div>
   );
 };
