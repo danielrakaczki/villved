@@ -3,15 +3,22 @@ import KabelezesImage from "@/public/kabelezes.png";
 import KapcsolotablaImage from "@/public/kapcsolotabla.png";
 import MeroraImage from "@/public/merorak.png";
 import Image from "next/image";
-import { SectionHeader } from "../section-header";
+import { WHILE_IN_VIEW_VARIANTS } from "../motion/animations";
+import { Motion } from "../motion/motion";
 import { Section } from "../section";
+import { SectionHeader } from "../section-header";
 
 export const ReferencesSection = () => {
   return (
     <Section id="references">
       <SectionHeader>Referencia munkáink</SectionHeader>
-      <div className="references-grid-area grid place-items-stretch gap-8">
-        <div className="relative" aria-disabled>
+      <Motion.div
+        variants={WHILE_IN_VIEW_VARIANTS}
+        initial="hidden"
+        whileInView="shown"
+        className="references-grid-area grid place-items-stretch gap-8"
+      >
+        <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="relative" aria-disabled>
           <Image
             fill
             src={MeroraImage}
@@ -21,8 +28,8 @@ export const ReferencesSection = () => {
             className="rounded-[1em]"
             placeholder="blur"
           />
-        </div>
-        <div className="relative" aria-disabled>
+        </Motion.div>
+        <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="relative" aria-disabled>
           <Image
             fill
             src={KabelezesImage}
@@ -32,8 +39,8 @@ export const ReferencesSection = () => {
             className="rounded-[1em]"
             placeholder="blur"
           />
-        </div>
-        <div className="relative" aria-disabled>
+        </Motion.div>
+        <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="relative" aria-disabled>
           <Image
             fill
             src={KapcsolotablaImage}
@@ -43,8 +50,8 @@ export const ReferencesSection = () => {
             className="rounded-[1em]"
             placeholder="blur"
           />
-        </div>
-        <div className="relative" aria-disabled>
+        </Motion.div>
+        <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="relative" aria-disabled>
           <Image
             fill
             src={AutoToltoImage}
@@ -54,8 +61,8 @@ export const ReferencesSection = () => {
             className="rounded-[1em]"
             placeholder="blur"
           />
-        </div>
-      </div>
+        </Motion.div>
+      </Motion.div>
     </Section>
   );
 };
