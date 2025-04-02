@@ -7,11 +7,9 @@ import { WHILE_IN_VIEW_VARIANTS } from "../motion/animations";
 
 export const BelowTheFoldSection = () => {
   return (
-    <section id="below-the-fold" className="w-full">
+    <Motion.section variants={WHILE_IN_VIEW_VARIANTS} initial="hidden" whileInView="shown" id="below-the-fold" className="w-full">
       <Motion.div
         variants={WHILE_IN_VIEW_VARIANTS}
-        initial="hidden"
-        whileInView="shown"
         className="mx-auto grid w-full grid-cols-1 place-items-stretch gap-16 p-8 max-md:pt-8 md:w-full md:grid-cols-[1fr_2fr] md:flex-row md:items-center lg:max-w-screen-2xl"
       >
         <Motion.div
@@ -36,18 +34,22 @@ export const BelowTheFoldSection = () => {
             variants={WHILE_IN_VIEW_VARIANTS}
             className="from-primary to-primary-2 flex items-center gap-4 rounded-[1em] bg-gradient-to-br p-4 text-white max-md:w-full md:flex-col md:justify-center lg:p-8"
           >
-            <HomeWithManInsideIcon className="h-[4em] w-[4em] lg:h-[5em] lg:w-[5em]" aria-disabled />
-            <p className="max-w-[20ch] font-bold md:text-center">Csak lakossági ügyfelek számára</p>
+            <HomeWithManInsideIcon variants={WHILE_IN_VIEW_VARIANTS} className="h-[4em] w-[4em] lg:h-[5em] lg:w-[5em]" aria-disabled />
+            <Motion.p variants={WHILE_IN_VIEW_VARIANTS} className="max-w-[20ch] font-bold md:text-center">
+              Csak lakossági ügyfelek számára
+            </Motion.p>
           </Motion.li>
           <Motion.li
             variants={WHILE_IN_VIEW_VARIANTS}
             className="from-primary to-primary-2 flex items-center gap-4 rounded-[1em] bg-gradient-to-br p-4 text-white max-md:w-full md:flex-col md:justify-center lg:p-8"
           >
-            <DoubleCheckMarkIcon className="h-[4em] w-[4em] lg:h-[5em] lg:w-[5em]" aria-disabled />
-            <p className="max-w-[20ch] font-bold md:text-center">Több mint 20 féle szolgáltatás</p>
+            <DoubleCheckMarkIcon variants={WHILE_IN_VIEW_VARIANTS} className="h-[4em] w-[4em] lg:h-[5em] lg:w-[5em]" aria-disabled />
+            <Motion.p variants={WHILE_IN_VIEW_VARIANTS} className="max-w-[20ch] font-bold md:text-center">
+              Több mint 20 féle szolgáltatás
+            </Motion.p>
           </Motion.li>
         </Motion.ul>
       </Motion.div>
-    </section>
+    </Motion.section>
   );
 };

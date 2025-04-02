@@ -12,12 +12,7 @@ export const ReferencesSection = () => {
   return (
     <Section id="references">
       <SectionHeader>Referencia munkáink</SectionHeader>
-      <Motion.div
-        variants={WHILE_IN_VIEW_VARIANTS}
-        initial="hidden"
-        whileInView="shown"
-        className="references-grid-area grid place-items-stretch gap-8"
-      >
+      <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="references-grid-area grid place-items-stretch gap-8">
         <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="relative" aria-disabled>
           <Image
             fill

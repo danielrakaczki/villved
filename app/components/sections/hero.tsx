@@ -6,17 +6,15 @@ import { WHILE_IN_VIEW_VARIANTS } from "../motion/animations";
 
 export const HeroSection = () => {
   return (
-    <section id="hero" className="w-full">
-      <div className="mx-auto grid w-full gap-4 p-8 md:grid-cols-2 md:place-items-stretch lg:max-w-screen-2xl">
-        <Motion.div
-          variants={WHILE_IN_VIEW_VARIANTS}
-          whileInView="shown"
-          initial="hidden"
-          className="flex flex-col justify-center gap-8 text-balance"
-        >
+    <Motion.section variants={WHILE_IN_VIEW_VARIANTS} whileInView="shown" initial="hidden" id="hero" className="w-full">
+      <Motion.div
+        variants={WHILE_IN_VIEW_VARIANTS}
+        className="mx-auto grid w-full gap-4 p-8 md:grid-cols-2 md:place-items-stretch lg:max-w-screen-2xl"
+      >
+        <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="flex flex-col justify-center gap-8 text-balance">
           <Motion.h1 variants={WHILE_IN_VIEW_VARIANTS} className="text-3xl leading-tight font-bold lg:text-[clamp(3rem,3.33vw,4rem)]">
-            <span className="text-primary">Biztonságos</span> és <span className="text-primary">profi</span> villanyszerelés lakossági
-            ügyfeleknek!
+            <Motion.span className="text-primary">Biztonságos</Motion.span> és <Motion.span className="text-primary">profi</Motion.span>{" "}
+            villanyszerelés lakossági ügyfeleknek!
           </Motion.h1>
           <Motion.p variants={WHILE_IN_VIEW_VARIANTS} className="text-tertiary font-semibold lg:text-xl">
             Regisztrált villanyszerelőként biztosítjuk, hogy otthonod elektromos rendszere biztonságos, szabványos és megbízható legyen.
@@ -38,13 +36,7 @@ export const HeroSection = () => {
             </Motion.div>
           </Motion.div>
         </Motion.div>
-        <Motion.div
-          variants={WHILE_IN_VIEW_VARIANTS}
-          whileInView="shown"
-          initial="hidden"
-          className="relative aspect-square max-md:row-start-1"
-          aria-disabled
-        >
+        <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="relative aspect-square max-md:row-start-1" aria-disabled>
           <Image
             fill
             src={HeroImage}
@@ -54,7 +46,7 @@ export const HeroSection = () => {
             placeholder="empty"
           />
         </Motion.div>
-      </div>
-    </section>
+      </Motion.div>
+    </Motion.section>
   );
 };

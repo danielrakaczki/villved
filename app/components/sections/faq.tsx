@@ -30,7 +30,7 @@ export const FaqSection = () => {
     <Section id="faq">
       <JsonLDScript jsonLD={FAQ_JSON_LD} />
       <SectionHeader>Gyakori kérdések</SectionHeader>
-      <Motion.div variants={WHILE_IN_VIEW_VARIANTS} initial="hidden" whileInView="shown" className="relative flex flex-col gap-2">
+      <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="relative flex flex-col gap-2">
         <Motion.div
           variants={WHILE_IN_VIEW_VARIANTS}
           className="bg-tertiary/10 absolute inset-y-0 left-0 w-2 rounded-l-2xl content-['']"

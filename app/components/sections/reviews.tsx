@@ -71,9 +71,7 @@ const Review = ({ image, name, service, review, stars }: ReviewProps) => {
       </Motion.p>
       <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="stars flex items-center justify-center gap-4">
         {Array.from({ length: stars }).map((_, i) => (
-          <Motion.div key={i} variants={WHILE_IN_VIEW_VARIANTS}>
-            <StartIcon className="star" />
-          </Motion.div>
+          <StartIcon key={i} variants={WHILE_IN_VIEW_VARIANTS} className="star" />
         ))}
       </Motion.div>
     </Motion.div>

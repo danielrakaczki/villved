@@ -10,7 +10,7 @@ export const AboutUsSection = () => {
   return (
     <Section id="about-us">
       <SectionHeader>Rólunk</SectionHeader>
-      <Motion.div variants={WHILE_IN_VIEW_VARIANTS} initial="hidden" whileInView="shown" className="mb-8 flex flex-col gap-8 md:flex-row">
+      <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="mb-8 flex flex-col gap-8 md:flex-row">
         <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="relative aspect-video md:flex-1">
           <Image
             src={TeamImage}
