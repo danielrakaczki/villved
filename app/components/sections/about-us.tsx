@@ -24,11 +24,9 @@ export const AboutUsSection = () => {
               src={TeamImage}
               sizes="(max-width: 48rem) 100vw, 50vw"
               fill
-              objectFit="cover"
-              objectPosition="50% 30%"
               placeholder="blur"
               alt="A csapat"
-              className="rounded-[1em]"
+              className="rounded-[1em] object-cover object-[50%_30%]"
             />
           </Motion.div>
           <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="flex flex-col gap-8 md:flex-1">
@@ -58,11 +56,9 @@ export const AboutUsSection = () => {
               src={TeamWorkingImage}
               sizes="(max-width: 48rem) 100vw, 50vw"
               fill
-              objectFit="cover"
-              objectPosition="center"
               placeholder="blur"
               alt="A csapat munka közben"
-              className="rounded-[1em]"
+              className="rounded-[1em] object-cover object-center"
             />
           </Motion.div>
           <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="md:flex-1">

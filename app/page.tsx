@@ -28,8 +28,7 @@ export default function Home() {
               src={ContactImage}
               alt="Csépke László"
               sizes="(max-width: 48rem) 90vw, 33vw"
-              objectFit="contain"
-              objectPosition="center bottom"
+              className="object-contain object-[center_bottom]"
               placeholder="blur"
             />
           }
@@ -63,8 +62,7 @@ export default function Home() {
               src={ContactImage}
               sizes="(max-width: 48rem) 90vw, 33vw"
               alt="Csépke László"
-              objectFit="contain"
-              objectPosition="center bottom"
+              className="object-contain object-[center_bottom]"
               placeholder="blur"
             />
           }

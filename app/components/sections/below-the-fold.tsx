@@ -37,8 +37,7 @@ export const BelowTheFoldSection = () => {
               src={BelowTheFoldImage}
               sizes="33vw"
               alt="Csépke Lászlóról munka közben"
-              objectFit="contain"
-              objectPosition="center"
+              className="object-contain object-center"
               placeholder="blur"
             />
           </Motion.div>

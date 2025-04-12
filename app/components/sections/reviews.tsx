@@ -67,16 +67,7 @@ const Review = ({ image, name, service, review, stars }: ReviewProps) => {
   return (
     <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="bg-primary/5 flex flex-col items-center rounded-2xl p-8 text-center">
       <Motion.div variants={WHILE_IN_VIEW_VARIANTS}>
-        <Image
-          src={image}
-          alt={name}
-          width={64}
-          height={64}
-          placeholder="blur"
-          className="rounded-full"
-          objectPosition="center"
-          objectFit="cover"
-        />
+        <Image src={image} alt={name} width={64} height={64} placeholder="blur" className="rounded-full object-cover object-center" />
       </Motion.div>
       <Motion.p variants={WHILE_IN_VIEW_VARIANTS} className="text-2xl leading-tight font-bold">
         {name}

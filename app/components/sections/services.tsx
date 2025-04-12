@@ -41,8 +41,7 @@ export const ServicesSection = (props: ServicesSectionProps) => {
                 fill
                 src={CsaladiHazImage}
                 sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
-                objectFit="cover"
-                objectPosition="center"
+                className="object-cover object-center"
                 alt="Családi ház illusztráció"
                 placeholder="blur"
               />
@@ -55,8 +54,7 @@ export const ServicesSection = (props: ServicesSectionProps) => {
                 fill
                 src={RegisztraltVillanyszereloImage}
                 sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
-                objectFit="cover"
-                objectPosition="center"
+                className="object-cover object-center"
                 alt="Regisztrált villanyszerelő illusztráció"
                 placeholder="blur"
               />
@@ -69,8 +67,7 @@ export const ServicesSection = (props: ServicesSectionProps) => {
                 fill
                 src={NapelemImage}
                 sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
-                objectFit="cover"
-                objectPosition="center"
+                className="object-cover object-center"
                 alt="Napelem telepítése illusztráció"
                 placeholder="blur"
               />
@@ -83,8 +80,7 @@ export const ServicesSection = (props: ServicesSectionProps) => {
                 fill
                 src={MerohelyImage}
                 sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
-                objectFit="cover"
-                objectPosition="center"
+                className="object-cover object-center"
                 alt="Mérőhely szabványosítás illusztráció"
                 placeholder="blur"
               />
@@ -97,8 +93,7 @@ export const ServicesSection = (props: ServicesSectionProps) => {
                 fill
                 src={VbfImage}
                 sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
-                objectFit="cover"
-                objectPosition="center"
+                className="object-cover object-center"
                 alt="VBF felülviszgálat illusztráció"
                 placeholder="blur"
               />
@@ -111,8 +106,7 @@ export const ServicesSection = (props: ServicesSectionProps) => {
                 fill
                 src={LakossagiVillanyszerelesImage}
                 sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
-                objectFit="cover"
-                objectPosition="center"
+                className="object-cover object-center"
                 alt="Lakossági Villanyszerelés A-Z illusztráció"
                 placeholder="blur"
               />

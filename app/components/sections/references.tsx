@@ -27,9 +27,7 @@ export const ReferencesSection = () => {
               src={MeroraImage}
               sizes="(max-width: 48rem) 100vw, 50vw"
               alt="Méröóra állások"
-              objectFit="cover"
-              objectPosition="center"
-              className="rounded-[1em]"
+              className="rounded-[1em] object-cover object-center"
               placeholder="blur"
             />
           </Motion.div>
@@ -39,9 +37,7 @@ export const ReferencesSection = () => {
               src={KabelezesImage}
               sizes="(max-width: 48rem) 100vw, 50vw"
               alt="Kábelezés"
-              objectFit="cover"
-              objectPosition="center"
-              className="rounded-[1em]"
+              className="rounded-[1em] object-cover object-center"
               placeholder="blur"
             />
           </Motion.div>
@@ -51,9 +47,7 @@ export const ReferencesSection = () => {
               src={KapcsolotablaImage}
               sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 25vw, 50vw"
               alt="Kapcsolótábla"
-              objectFit="cover"
-              objectPosition="center"
-              className="rounded-[1em]"
+              className="rounded-[1em] object-cover object-center"
               placeholder="blur"
             />
           </Motion.div>
@@ -63,9 +57,7 @@ export const ReferencesSection = () => {
               src={AutoToltoImage}
               sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 25vw, 50vw"
               alt="Autó töltö állomás"
-              objectFit="cover"
-              objectPosition="center"
-              className="rounded-[1em]"
+              className="rounded-[1em] object-cover object-center"
               placeholder="blur"
             />
           </Motion.div>

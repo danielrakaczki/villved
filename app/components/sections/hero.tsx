@@ -53,12 +53,12 @@ export const HeroSection = () => {
           </Motion.div>
           <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="relative aspect-square max-md:row-start-1" aria-disabled>
             <Image
+              priority
               fill
               src={HeroImage}
               sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
               alt="Csépke László és Ifj. Csépke László"
-              objectFit="contain"
-              objectPosition="center"
+              className="object-contain object-center"
               placeholder="empty"
             />
           </Motion.div>
