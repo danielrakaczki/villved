@@ -1,16 +1,16 @@
 import { cn } from "@/app/utils";
-import { MotionProps } from "motion/react";
-import { Ref } from "react";
+import type { HTMLMotionProps, MotionProps } from "motion/react";
+import type { Ref } from "react";
 import { Motion } from "./motion/motion";
 
-type ButtonProps = {
+type ButtonProps = HTMLMotionProps<"button"> & {
   ref?: Ref<HTMLButtonElement>;
   color: "primary" | "tertiary" | "white";
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+};
 
 export const Button = ({ children, className, color, ...props }: ButtonProps & MotionProps) => {
   return (
-    <Motion.button className={cn("btn", color, className)} {...props}>
+    <Motion.button className={cn("btn", color, className)} {...(props as object)}>
       {children}
     </Motion.button>
   );
