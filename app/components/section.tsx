@@ -16,7 +16,7 @@ export const Section = ({ children, innerContainerProps: innerProps, className, 
         variants={WHILE_IN_VIEW_VARIANTS}
         initial="hidden"
         whileInView="shown"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
         className={cn("mx-auto p-8 lg:max-w-screen-2xl", innerClassName)}
         {...(innerContainerProps as object)}
       >

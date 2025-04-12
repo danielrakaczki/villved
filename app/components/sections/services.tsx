@@ -4,7 +4,6 @@ import MerohelyImage from "@/public/merohely.png";
 import NapelemImage from "@/public/napelem.png";
 import RegisztraltVillanyszereloImage from "@/public/regisztralt-villanyszerelo.png";
 import VbfImage from "@/public/vbf.png";
-import { MotionConfig } from "motion/react";
 import Image from "next/image";
 import type { ReactNode, Ref } from "react";
 import { Button } from "../button";
@@ -24,97 +23,89 @@ type ServicesSectionItemProps = {
 
 export const ServicesSection = (props: ServicesSectionProps) => {
   return (
-    <MotionConfig
-      reducedMotion="user"
-      transition={{
-        staggerChildren: 0.1,
-        when: "beforeChildren",
-      }}
-    >
-      <Section id="services" className="mt-16 scroll-mt-16" {...props}>
-        <SectionHeader>Szolgáltatásaink</SectionHeader>
-        <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <ServicesSectionItem
-            title="Családi házak, lakások teljes villanyszerelése"
-            image={
-              <Image
-                fill
-                src={CsaladiHazImage}
-                sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
-                className="object-cover object-center"
-                alt="Családi ház illusztráció"
-                placeholder="blur"
-              />
-            }
-          />
-          <ServicesSectionItem
-            title="Regisztrált villanyszerelő"
-            image={
-              <Image
-                fill
-                src={RegisztraltVillanyszereloImage}
-                sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
-                className="object-cover object-center"
-                alt="Regisztrált villanyszerelő illusztráció"
-                placeholder="blur"
-              />
-            }
-          />
-          <ServicesSectionItem
-            title="Napelem telepítése"
-            image={
-              <Image
-                fill
-                src={NapelemImage}
-                sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
-                className="object-cover object-center"
-                alt="Napelem telepítése illusztráció"
-                placeholder="blur"
-              />
-            }
-          />
-          <ServicesSectionItem
-            title="Mérőhely szabványosítás"
-            image={
-              <Image
-                fill
-                src={MerohelyImage}
-                sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
-                className="object-cover object-center"
-                alt="Mérőhely szabványosítás illusztráció"
-                placeholder="blur"
-              />
-            }
-          />
-          <ServicesSectionItem
-            title="VBF felülviszgálat"
-            image={
-              <Image
-                fill
-                src={VbfImage}
-                sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
-                className="object-cover object-center"
-                alt="VBF felülviszgálat illusztráció"
-                placeholder="blur"
-              />
-            }
-          />
-          <ServicesSectionItem
-            title="Lakossági Villanyszerelés A-Z"
-            image={
-              <Image
-                fill
-                src={LakossagiVillanyszerelesImage}
-                sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
-                className="object-cover object-center"
-                alt="Lakossági Villanyszerelés A-Z illusztráció"
-                placeholder="blur"
-              />
-            }
-          />
-        </Motion.div>
-      </Section>
-    </MotionConfig>
+    <Section id="services" className="mt-16 scroll-mt-16" {...props}>
+      <SectionHeader>Szolgáltatásaink</SectionHeader>
+      <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <ServicesSectionItem
+          title="Családi házak, lakások teljes villanyszerelése"
+          image={
+            <Image
+              fill
+              src={CsaladiHazImage}
+              sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
+              className="object-cover object-center"
+              alt="Családi ház illusztráció"
+              placeholder="blur"
+            />
+          }
+        />
+        <ServicesSectionItem
+          title="Regisztrált villanyszerelő"
+          image={
+            <Image
+              fill
+              src={RegisztraltVillanyszereloImage}
+              sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
+              className="object-cover object-center"
+              alt="Regisztrált villanyszerelő illusztráció"
+              placeholder="blur"
+            />
+          }
+        />
+        <ServicesSectionItem
+          title="Napelem telepítése"
+          image={
+            <Image
+              fill
+              src={NapelemImage}
+              sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
+              className="object-cover object-center"
+              alt="Napelem telepítése illusztráció"
+              placeholder="blur"
+            />
+          }
+        />
+        <ServicesSectionItem
+          title="Mérőhely szabványosítás"
+          image={
+            <Image
+              fill
+              src={MerohelyImage}
+              sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
+              className="object-cover object-center"
+              alt="Mérőhely szabványosítás illusztráció"
+              placeholder="blur"
+            />
+          }
+        />
+        <ServicesSectionItem
+          title="VBF felülviszgálat"
+          image={
+            <Image
+              fill
+              src={VbfImage}
+              sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
+              className="object-cover object-center"
+              alt="VBF felülviszgálat illusztráció"
+              placeholder="blur"
+            />
+          }
+        />
+        <ServicesSectionItem
+          title="Lakossági Villanyszerelés A-Z"
+          image={
+            <Image
+              fill
+              src={LakossagiVillanyszerelesImage}
+              sizes="(max-width: 48rem) 100vw, (max-width: 96rem) 50vw, 33vw"
+              className="object-cover object-center"
+              alt="Lakossági Villanyszerelés A-Z illusztráció"
+              placeholder="blur"
+            />
+          }
+        />
+      </Motion.div>
+    </Section>
   );
 };
 
