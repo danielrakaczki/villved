@@ -23,7 +23,15 @@ export default function Home() {
           title="Megbízható villanyszerelőt keresel?"
           description="Írj nekünk vagy hívj minket, és szakértő csapatunk készséggel áll rendelkezésedre!"
           image={
-            <Image fill src={ContactImage} alt="Csépke László" objectFit="contain" objectPosition="center bottom" placeholder="blur" />
+            <Image
+              fill
+              src={ContactImage}
+              alt="Csépke László"
+              sizes="(max-width: 48rem) 90vw, 33vw"
+              objectFit="contain"
+              objectPosition="center bottom"
+              placeholder="blur"
+            />
           }
         />
 
@@ -50,7 +58,15 @@ export default function Home() {
           title="Szakértői segítség egy hívásnyira!"
           description="Kérdésed van a szolgáltatásainkkal kapcsolatban? Vedd fel velünk a kapcsolatot, és villámgyorsan válaszolunk!"
           image={
-            <Image fill src={ContactImage} alt="Csépke László" objectFit="contain" objectPosition="center bottom" placeholder="blur" />
+            <Image
+              fill
+              src={ContactImage}
+              sizes="(max-width: 48rem) 90vw, 33vw"
+              alt="Csépke László"
+              objectFit="contain"
+              objectPosition="center bottom"
+              placeholder="blur"
+            />
           }
         />
 

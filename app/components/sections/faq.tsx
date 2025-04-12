@@ -1,4 +1,5 @@
 import { FAQS } from "@/app/data/faqs";
+import { MotionConfig } from "motion/react";
 import type { FAQPage, WithContext } from "schema-dts";
 import { SolidChevronDownIcon } from "../icons/solid-chevron-down";
 import { JsonLDScript } from "../json-ld-script";
@@ -27,20 +28,28 @@ const FAQ_JSON_LD: WithContext<FAQPage> = {
 
 export const FaqSection = () => {
   return (
-    <Section id="faq">
-      <JsonLDScript jsonLD={FAQ_JSON_LD} />
-      <SectionHeader>Gyakori kérdések</SectionHeader>
-      <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="relative flex flex-col gap-2">
-        <Motion.div
-          variants={WHILE_IN_VIEW_VARIANTS}
-          className="bg-tertiary/10 absolute inset-y-0 left-0 w-2 rounded-l-2xl content-['']"
-          aria-disabled
-        ></Motion.div>
-        {FAQS.map((faq, index) => (
-          <Faq key={index} {...faq} />
-        ))}
-      </Motion.div>
-    </Section>
+    <MotionConfig
+      reducedMotion="user"
+      transition={{
+        staggerChildren: 0.1,
+        when: "beforeChildren",
+      }}
+    >
+      <Section id="faq">
+        <JsonLDScript jsonLD={FAQ_JSON_LD} />
+        <SectionHeader>Gyakori kérdések</SectionHeader>
+        <Motion.div variants={WHILE_IN_VIEW_VARIANTS} className="relative flex flex-col gap-2">
+          <Motion.div
+            variants={WHILE_IN_VIEW_VARIANTS}
+            className="bg-tertiary/10 absolute inset-y-0 left-0 w-2 rounded-l-2xl content-['']"
+            aria-disabled
+          ></Motion.div>
+          {FAQS.map((faq, index) => (
+            <Faq key={index} {...faq} />
+          ))}
+        </Motion.div>
+      </Section>
+    </MotionConfig>
   );
 };
 

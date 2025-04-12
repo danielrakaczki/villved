@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import "./globals.css";
+
 import { Navbar } from "./components/navbar/navbar";
 import { cn } from "./utils";
+import { MotionWrapper } from "./components/motion/motion-wrapper";
 
 const workSans = Work_Sans({
   variable: "--font-work-sans",
@@ -23,7 +25,7 @@ export default function RootLayout({
     <html lang="hu">
       <body className={cn(workSans.variable, "antialiased")}>
         <Navbar />
-        {children}
+        <MotionWrapper>{children}</MotionWrapper>
       </body>
     </html>
   );
