@@ -1,4 +1,4 @@
-import { MotionProps } from "motion/react";
+import type { MotionProps } from "motion/react";
 import type { SVGProps } from "react";
 import { Motion } from "../motion/motion";
 
