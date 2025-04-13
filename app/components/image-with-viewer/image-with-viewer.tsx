@@ -24,8 +24,6 @@ export const ImageWithViewer = ({ imagePath, alt, src, ...imageProps }: ImageWit
   const { isOpen, open, close } = useDisclosure();
   const placeholder = useImagePlaceholder(imagePath);
 
-  console.log(placeholder);
-
   useFocusTrap({ isEnabled: isOpen, boundingBoxRef, triggerRef });
 
   return (
@@ -35,8 +33,9 @@ export const ImageWithViewer = ({ imagePath, alt, src, ...imageProps }: ImageWit
         role="dialog"
         aria-modal="true"
         aria-labelledby="image-viewer-title"
-        className={cn("inset-0 z-[100] overflow-hidden", isOpen ? "fixed" : "hidden")}
-        animate={isOpen ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+        aria-hidden={!isOpen}
+        className={cn("fixed inset-0 z-[100] overflow-hidden")}
+        animate={isOpen ? { opacity: 1, scale: 1, pointerEvents: "auto" } : { opacity: 0, scale: 0.95, pointerEvents: "none" }}
       >
         <div className="pointer-events-auto absolute inset-0 h-full w-full cursor-pointer bg-black/75" onClick={close} />
         <h2 id="image-viewer-title" className="sr-only">
