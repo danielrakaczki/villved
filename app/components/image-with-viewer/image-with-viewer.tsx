@@ -47,16 +47,16 @@ export const ImageWithViewer = ({ imagePath, alt, src, ...imageProps }: ImageWit
           onClick={close}
           aria-label="Bezárás"
           aria-controls="image-viewer"
-          className="absolute top-4 right-4 z-[100] flex h-12 w-12 cursor-pointer items-center justify-center rounded-lg focus:ring-2 focus:ring-white focus:outline-none"
+          className="absolute top-[calc(1rem+2px)] right-4 z-10 cursor-pointer focus:ring-2 focus:ring-white focus:outline-none"
         >
-          <CloseIcon width="1.5rem" height="1.5rem" aria-hidden className="text-white" />
+          <CloseIcon width="1.5rem" height="1.5rem" aria-hidden />
         </Button>
-        <div id="image-viewer" className="grid h-full place-items-stretch p-16">
-          <figure className="relative bg-black">
+        <div id="image-viewer" className="grid h-full place-items-stretch p-4 lg:p-16">
+          <figure className="relative overflow-hidden rounded-[1em] bg-black">
             {placeholder?.base64 && (
-              <Image fill src={placeholder?.base64} alt="Háttér" aria-hidden className="z-0 object-cover object-center" />
+              <Image fill src={placeholder?.base64} alt="Háttér" loading="lazy" aria-hidden className="z-0 object-cover object-center" />
             )}
-            <Image fill sizes="100vw" loading="lazy" placeholder="blur" src={src} alt={alt} {...imageProps} className="object-contain" />
+            <Image fill sizes="100vw" loading="lazy" src={src} alt={alt} {...imageProps} className="object-contain" />
             <figcaption className="absolute right-0 bottom-0 left-0 bg-black/50 p-2 text-center text-white italic">{alt}</figcaption>
           </figure>
         </div>
