@@ -1,14 +1,10 @@
 "use client";
 
-import { useDisclosure } from "@/app/hooks/use-disclosure";
-import { CloseIcon } from "../icons/close";
-import Image, { ImageProps } from "next/image";
-import { Motion } from "../motion/motion";
-import { RefObject, useRef } from "react";
-import { cn } from "@/app/utils";
-import { Button } from "../button";
-import { useFocusTrap } from "@/app/hooks/use-focus-trap";
 import { useImagePlaceholder } from "@/app/hooks/use-image-placeholder";
+import Image, { type ImageProps } from "next/image";
+import { type RefObject, useRef } from "react";
+import { Button } from "../button";
+import { CloseIcon } from "../icons/close";
 
 type ImageWithViewerProps = ImageProps & {
   /**
@@ -19,39 +15,39 @@ type ImageWithViewerProps = ImageProps & {
 
 export const ImageWithViewer = ({ imagePath, alt, src, ...imageProps }: ImageWithViewerProps) => {
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const boundingBoxRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
-  const { isOpen, open, close } = useDisclosure();
   const placeholder = useImagePlaceholder(imagePath);
 
-  useFocusTrap({ isEnabled: isOpen, boundingBoxRef, triggerRef });
+  const handleOpen = () => {
+    dialogRef.current?.showModal();
+  };
+
+  const handleClose = () => {
+    dialogRef.current?.close();
+  };
 
   return (
     <>
-      <Motion.div
-        ref={boundingBoxRef}
-        role="dialog"
-        aria-modal="true"
+      <dialog
+        ref={dialogRef}
         aria-labelledby="image-viewer-title"
-        aria-hidden={!isOpen}
-        className={cn("fixed inset-0 z-[100] overflow-hidden")}
-        animate={isOpen ? { opacity: 1, scale: 1, pointerEvents: "auto" } : { opacity: 0, scale: 0.95, pointerEvents: "none" }}
+        className="m-0 h-full max-h-full w-full max-w-full overflow-hidden bg-transparent p-0 backdrop:bg-black/50"
+        onClose={handleClose}
       >
-        <div className="pointer-events-auto absolute inset-0 h-full w-full cursor-pointer bg-black/75" onClick={close} />
         <h2 id="image-viewer-title" className="sr-only">
           Nagyított kép megtekintése
         </h2>
         <Button
           color="tertiary"
-          onClick={close}
+          onClick={handleClose}
           aria-label="Bezárás"
-          aria-controls="image-viewer"
-          className="absolute top-[calc(1rem+2px)] right-4 z-10 cursor-pointer focus:ring-2 focus:ring-white focus:outline-none"
+          className="absolute top-4 right-4 z-10 cursor-pointer focus:ring-2 focus:ring-white focus:outline-none"
         >
           <CloseIcon width="1.5rem" height="1.5rem" aria-hidden />
         </Button>
-        <div id="image-viewer" className="grid h-full place-items-stretch p-4 lg:p-16">
-          <figure className="relative overflow-hidden rounded-[1em] bg-black">
+        <div className="grid h-full place-items-stretch p-4 lg:p-16">
+          <figure className="relative overflow-hidden rounded-[1em]">
             {placeholder?.base64 && (
               <Image fill src={placeholder?.base64} alt="Háttér" loading="lazy" aria-hidden className="z-0 object-cover object-center" />
             )}
@@ -59,12 +55,12 @@ export const ImageWithViewer = ({ imagePath, alt, src, ...imageProps }: ImageWit
             <figcaption className="absolute right-0 bottom-0 left-0 bg-black/50 p-2 text-center text-white italic">{alt}</figcaption>
           </figure>
         </div>
-      </Motion.div>
+      </dialog>
       <Image
         src={src}
         alt={alt}
         {...imageProps}
-        onClick={open}
+        onClick={handleOpen}
         ref={triggerRef as RefObject<HTMLImageElement | null>}
         aria-label="Nézd meg nagyban"
         aria-controls="image-viewer"
